@@ -3,10 +3,10 @@
     %attribution
       %a{ href: "https://akenergygateway.alaska.edu/partners/" } Alaska Energy Data Gateway
     %layer{ data: { url: '/regions.geojson' } }
-    %layer{ data: { url: '/aedg.geojson', 'geojson-options' => 'custom-marker', fit: 'true', 'marker-label-field' => 'title', cluster: 'true' }}
+    %layer{ data: { url: '/aedg.geojson', 'geojson-options' => 'custom-marker', fit: 'true', 'marker-label-field' => 'name', cluster: 'true' }}
       %popup
-        %h1 {{title}}
-        %p Region: {{aea_energy_region__title}}
+        %h1 {{name}}
+        %p Region: {{aea_energy_region__name}}
 
         %a.btn.btn-primary.btn-block{ href: "https://akenergygateway.alaska.edu/community-data-summary/{{gnis_feature_id}}", target:"_blank" }
           AK Energy Data Gateway Community Summary

@@ -17,6 +17,7 @@
 //= require leaflet.markercluster/dist/leaflet.markercluster
 //= require handlebars/handlebars
 //= require uri.js/src/URI
+//###= require highcharts/highcharts
 //= require_tree .
 
 function startMapbox(mapEl) {

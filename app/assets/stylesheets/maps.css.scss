@@ -21,6 +21,16 @@ layer {
   display: none;
 }
 
+.leaflet-popup-content {
+  min-width: 400px;
+  iframe {
+    border: none;
+    margin-left: -10px;
+    height: 300px;
+    width: 100%;
+  }
+}
+
 .circle-marker {
   border-radius: 40px;
   border: 1px solid #efefef;

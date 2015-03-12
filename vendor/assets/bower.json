@@ -12,6 +12,7 @@
     "mapbox.js": "~> 2.1.5",
     "leaflet.markercluster": "latest",
     "wicket": "https://github.com/arthur-e/Wicket.git",
-    "uri.js": "latest"
+    "uri.js": "latest",
+    "highcharts": "latest"
   }
 }

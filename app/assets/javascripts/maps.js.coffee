@@ -42,20 +42,29 @@ class CustomMarker extends CustomPopup
       })
     opts
 
+class CustomStyle extends CustomMarker
+  @build: (params = {}, opts={}) ->
+    opts = super(params, opts)
+
+    opts.style = (feature) ->
+      return { fillOpacity: 0, color: '#009933' }
+    opts
+
 class Layer
   @geojson_options: {
     'custom-marker': CustomMarker.build,
     'custom-popup': CustomPopup.build
+    'custom-style': CustomStyle.build
   }
 
-  @register_geojson_options_builder: (title, klass) ->
-    Layer.geojson_options[title] = klass
+  @register_geojson_options_builder: (name, klass) ->
+    Layer.geojson_options[name] = klass
 
-  @fetch_geojson_options_builder: (title, options) ->
-    Layer.geojson_options[title](options)
+  @fetch_geojson_options_builder: (name, options) ->
+    Layer.geojson_options[name](options)
 
-  @valid_geojson_options_builder: (title) ->
-    Layer.geojson_options[title]?
+  @valid_geojson_options_builder: (name) ->
+    Layer.geojson_options[name]?
 
   @next_page: (uri) ->
     url = new URI(uri)
