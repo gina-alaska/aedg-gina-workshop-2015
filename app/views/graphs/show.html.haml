@@ -1,0 +1,2 @@
+= line_chart [{ name: 'Fuel used (gal)', data: Pce.where(gnis_feature_id: @gnis_id).group_by_month(:date).sum(:fuel_used_gal) }]
+= column_chart [:residential_kwh_sold, :commercial_kwh_sold, :community_kwh_sold, :government_kwh_sold].collect { |field| { name: field, data: Pce.where(gnis_feature_id: @gnis_id).group_by_month(:date).sum(field) } }, stacked: true

@@ -1,0 +1,15 @@
+.map-container{ style: 'position: relative' }
+  #search-map.search-map{ data: { behavior: 'map', target: 'search-map', 'mapbox-id' => 'gina-alaska.knb7oi02', 'max-zoom' => 15, attribution: '' } }
+    %attribution
+      %a{ href: "https://akenergygateway.alaska.edu/partners/" } Alaska Energy Data Gateway
+    %layer{ data: { url: '/house_districts.geojson', 'geojson-options' => 'custom-style' } }
+      %popup
+        %h1 Region: {{District_N}}-{{SENATE}}
+    %layer{ data: { url: '/aedg.geojson', 'geojson-options' => 'custom-style', fit: 'true', 'marker-label-field' => 'name', cluster: 'true' }}
+      %popup
+        %h1 {{name}}
+        %p Region: {{aea_energy"_region__name}}
+        %iframe{ src: '/graphs/{{gnis_feature_id}}' }
+
+        %a.btn.btn-primary.btn-block{ href: "https://akenergygateway.alaska.edu/community-data-summary/{{gnis_feature_id}}", target:"_blank" }
+          AK Energy Data Gateway Community Summary
