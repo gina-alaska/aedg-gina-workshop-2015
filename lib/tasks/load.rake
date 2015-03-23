@@ -9,7 +9,9 @@ task :import => :environment do
 
   counter = 0
   CSV.foreach(ENV['file'], headers: true, return_headers: false) do |line|
-    Pce.create(line.to_hash.keep_if { |k,v| Pce.column_names.include?(k) })
+    data = line.to_hash
+    next if ENV['id'].present? and data['gnis_feature_id'] != ENV['id']
+    Pce.create(data.keep_if { |k,v| Pce.column_names.include?(k) })
     print "\r#{counter += 1}"
   end
 end

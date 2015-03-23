@@ -7,7 +7,7 @@
         %h1 Region: {{District_N}}-{{SENATE}}
     %layer{ data: { url: '/aedg.geojson', 'geojson-options' => 'custom-style', fit: 'true', 'marker-label-field' => 'name', cluster: 'true' }}
       %popup
-        %h1 {{name}}
+        %h1 {{gnis_feature_id}} - {{name}}
         %p Region: {{aea_energy"_region__name}}
         %iframe{ src: '/graphs/{{gnis_feature_id}}' }
 
