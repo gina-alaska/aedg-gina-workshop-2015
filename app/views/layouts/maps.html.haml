@@ -7,7 +7,11 @@
     %link{:href => "https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css", :rel => "stylesheet"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = javascript_include_tag "//www.google.com/jsapi", "chartkick"
     = csrf_meta_tags
   %body.wrapper
+    .ribbon-wrapper-green
+      .ribbon-green
+        AEDG Workshop
+        %br/
+        Demo Map - Static Data
     = yield
