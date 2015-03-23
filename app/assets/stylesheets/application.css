@@ -47,8 +47,8 @@ html, body {
   -o-transform:      rotate(45deg);
   position: relative;
   padding: 7px 0;
-  left: -15px;
-  top: 50px;
+  left: -20px;
+  top: 45px;
   width: 300px;
   background-color: #BFDC7A;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
